@@ -98,14 +98,6 @@ body {
   font-size: 18px;
 }
 
-.loading {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 1.25rem;
-  color: #9c7a4e;
-  margin-top: 40vh;
-}
-
 
 /* ---------- Styles for CARD ---------- */
 .card {
@@ -264,4 +256,30 @@ body {
 .card__wiki:hover {
   color: #1a1410;
   border-color: #1a1410;
+}
+
+
+/* ------- SPINNER ------- */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

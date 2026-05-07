@@ -1,11 +1,11 @@
 import { useState } from "react"
 import useCatInfo from "./hooks/useCatInfo";
 import Card from "./components/Card"
-
+import Spinner from "./components/Spinner";
  
 function App() {
   const { catInfo, loading, fetchCat } = useCatInfo();
- 
+  
   return (
     <>
       <div className="app">
@@ -21,7 +21,7 @@ function App() {
         </button>
  
         {loading
-          ? <p className="loading">Finding a cat for you…</p>
+          ? <Spinner />
           : catInfo && (
             <Card
               name={catInfo.name || "Unknown"}
