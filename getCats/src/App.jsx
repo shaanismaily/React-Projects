@@ -1,43 +1,29 @@
-import { useState } from "react"
-import useCatInfo from "./hooks/useCatInfo";
-import Card from "./components/Card"
-import Spinner from "./components/Spinner";
- 
+import { Outlet, Link } from "react-router-dom";
+
 function App() {
-  const { catInfo, loading, fetchCat } = useCatInfo();
-  
   return (
     <>
-      <div className="app">
-        <header className="header">
-          <p className="header__eyebrow">Feline Encyclopedia</p>
-          <h1 className="header__title">Discover <em>Cat Breeds</em></h1>
-          <p className="header__subtitle">Explore the world's most fascinating felines</p>
-        </header>
- 
-        <button className="fetch-btn" onClick={fetchCat}>
-          <span className="fetch-btn__icon">🐾</span>
-          Discover a Cat
-        </button>
- 
-        {loading
-          ? <Spinner />
-          : catInfo && (
-            <Card
-              name={catInfo.name || "Unknown"}
-              image={catInfo.image || ""}
-              character={catInfo.temperament || "N/A"}
-              description={catInfo.description || ""}
-              origin={catInfo.origin || "N/A"}
-              lifeSpan={catInfo.life_span || ""}
-              wikipedia={catInfo.wikipedia_url || ""}
-              altNames={catInfo.alt_names || "None"}
-            />
-          )
-        }
-      </div>
+      <header className="sticky top-0 z-50 bg-[#1a1410]/95 backdrop-blur-sm shadow-md">
+        <nav className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+          <Link
+            to="/"
+            className="font-serif text-[#f5f0e8] text-lg font-semibold tracking-wide hover:text-[#d4a96a] transition-colors"
+          >
+            🐾 FelinePedia
+          </Link>
+          <Link
+            to="/favorite-cats"
+            className="text-sm font-medium text-[#d4a96a] border border-[#d4a96a]/40 rounded-full px-4 py-1.5 hover:bg-[#d4a96a]/10 transition-colors"
+          >
+            My Favorites
+          </Link>
+        </nav>
+      </header>
+      <main>
+        <Outlet />
+      </main>
     </>
   );
 }
- 
+
 export default App;
