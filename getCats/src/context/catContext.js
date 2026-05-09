@@ -4,7 +4,9 @@ import { createContext } from "react";
 export const catContext = createContext({
     favorites: [],
     addFavorite: (cat) => {},
-    removeFavorite: (id) => {}
+    removeFavorite: (id) => {},
+    lightTheme: true,
+    toggleTheme: () => {}
 })
 
 export const useCats = () => {
