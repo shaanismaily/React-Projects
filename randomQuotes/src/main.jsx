@@ -21,14 +21,6 @@ const router = createBrowserRouter([{
   ]
 }])
 
-function Root() {
-  const [favorites, setFavorites] = useState([]);
-
-  const addFavorite = (quote) => {
-    setFavorites(prev => [...prev, quote])
-  }
-}
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />

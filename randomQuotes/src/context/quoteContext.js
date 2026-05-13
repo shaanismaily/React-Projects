@@ -2,11 +2,11 @@ import { createContext, useContext } from "react";
 
 const quoteContext = createContext({
     favorites: [],
-    addFavorite: () => {},
-    removeFavorite: () => {},
+    addFavorite: (quote) => {},
+    removeFavorite: (id) => {},
 });
 
-export const quoteContextProvider = quoteContext.Provider
+export const QuoteContextProvider = quoteContext.Provider
 
 export const useQuoteContext = () => {
     return useContext(quoteContext);
