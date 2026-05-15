@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { getUsers } from "../api/users";
 
 function useUsers(page, limit = 9) {
