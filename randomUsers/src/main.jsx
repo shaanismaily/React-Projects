@@ -5,6 +5,7 @@ import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import UsersPage from "../src/pages/UsersPage.jsx"
+import UserDetailPage from './pages/UserDetailPage.jsx'
 
 const router = createBrowserRouter([{
   path: "/",
@@ -13,6 +14,10 @@ const router = createBrowserRouter([{
     {
       index: true,
       element: <UsersPage />
+    },
+    {
+      path: "/user/:id",
+      element: <UserDetailPage />
     }
   ]
 }])
